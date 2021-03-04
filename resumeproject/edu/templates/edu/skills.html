@@ -1,0 +1,39 @@
+{% extends 'core/base.html'%}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-warning border-bottom mb-5">Skills</h1>
+    <div class="row ">
+        <div class="col-sm-5 offset-sm-1 text-white">
+            <h1>HTML/CSS</h1>
+            <div class="progress progress-stripped">
+                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+              <h1>PHP</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <h1>SQL</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+
+        </div>
+        <div class="col-sm-5 sm-offset-1 text-white">
+            <h1>Python</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <h1>Laravel</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <h1>Django</h1>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped " role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
