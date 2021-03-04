@@ -1,4 +1,4 @@
-{% load static%}
+{% load static %}
 <div class="border-right border-warning h-100">
     <div class="text-center">
         <img src="{% static 'core/images/img.jpg'%}" alt="parul image" class="img-fluid rounded-circle mt-5" width="100px" height="100px">
@@ -7,9 +7,9 @@
     
     <hr class="border-light">
     <nav class="nav flex-column text-center">
-        <a href="{% url 'home' %}" class="nav-link">Home</a>
-        <a href="{% url 'certificate'%}" class="nav-link">Certificates</a>
-        <a href="{% url 'skills' %}" class="nav-link">Skills</a>
-        <a href="{% url 'contact'%}" class="nav-link">Contact</a>
+        <a href="{% url 'home' %}" class="nav-link {{ home }}">Home</a>
+        <a href="{% url 'certificate'%}" class="nav-link {{certificates}}">Certificates</a>
+        <a href="{% url 'skills' %}" class="nav-link {{skills}}">Skills</a>
+        <a href="{% url 'contact'%}" class="nav-link {{contact}}">Contact</a>
     </nav>
 </div>

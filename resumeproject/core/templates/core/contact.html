@@ -1,5 +1,5 @@
 {% extends 'core/base.html'%}
-{%load static%}
+{% load static %}
 {% block content %}
 <div class="container mt-5 text-white">
     <h1 class="text-warning border-bottom mb-5">Contact Us</h1>
@@ -8,7 +8,6 @@
             a matter of hours to help you.</p>
     
         <div class="row">
-    
             <!--Grid column-->
             <div class="col-md-9 mb-md-0 mb-5">
                 <form id="contact-form" name="contact-form" action="mail.php" method="POST">
@@ -66,7 +65,8 @@
                 </form>
     
                 <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                    <!-- <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a> -->
+                    <a href="" class="btn btn-primary mt-5">Send</a>
                 </div>
                 <div class="status"></div>
             </div>
