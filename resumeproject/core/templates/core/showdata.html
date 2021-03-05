@@ -1,0 +1,31 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-warning border-bottom mb-5">Contacted Users</h1>
+    <table id="example" class="table table-bordered text-white" style="width:100% ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for conn in contact %}
+            <tr>
+                <td>conn.id</td>
+                <td>conn.name</td>
+                <td>conn.email</td>
+                <td>conn.subject</td>
+                <td>conn.message</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+</div>
+{% endblock content %}

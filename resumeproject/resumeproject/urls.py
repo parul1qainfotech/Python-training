@@ -23,4 +23,5 @@ urlpatterns = [
     path('contact/',views.contact , name="contact"),
     path('',include('certi.urls')),
     path('',include('edu.urls')),
+    path('showdata',views.showcontact,name="show"),
 ]
