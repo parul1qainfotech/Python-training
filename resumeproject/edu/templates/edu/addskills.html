@@ -3,7 +3,7 @@
 
 <div class="container mt-5">
     <h1 class="text-warning border-bottom mb-5">Add your new Skills</h1>
-    <form action="" method="post" class="text-white">
+    <form action="" method="POST" class="text-white">
         {% csrf_token %}
         {{addskills.as_p}}
         <button class="submit">ADD New Skill</button>
