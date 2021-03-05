@@ -1,0 +1,31 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-warning border-bottom mb-5">Contacted Users</h1>
+    <table id="example" class="table table-bordered text-white" style="width:100% ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in contact %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.subject}}</td>
+                <td>{{i.message}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+</div>
+{% endblock content %}

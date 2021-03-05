@@ -1,0 +1,30 @@
+{% extends 'core/base.html'%}
+{%load static%}
+{% block content %}
+<div class="text-center">
+    <img src="{%static 'core/images/img.jpg'%}" alt="parul image" class="img-thumbnail mt-3" width="200px" height="100px">
+</div>
+<div class="mt-5 text-white">
+    <h2 class="font-weight-bold fonts">Hello,</h2>
+</div>
+<div >
+    <p class="text-white" style="text-indent: 90px;">
+        I am <b class="text-warning ">Parul</b>. I am software engineer and I am working in QA Infotech and having 4 month experience.
+        <pre class="text-white">
+            I have worked on  these:
+            <b class="text-warning">Languages:</b>Python,PHP
+            <b class="text-warning">Framework:</b>Laravel,Django
+            <b class="text-warning">Front End:</b>HTML,CSS,Basic of JAVASCRIPT,Basic of BOOTSTRAP
+            <b class="text-warning">Database:</b>SQL
+        </pre>
+    </p>
+    <p class="text-white">
+        I have completed my <b class="text-warning">BTECH</b> From <b class="text-warning">GURU GOBIN SINGH INDRAPRASTH UNIVERSITY</b> in <b class="text-warning">Computer Science </b>.
+    </p>
+</div>
+<div class="text-center">
+<a href="" class="mt-3 btn btn-outline-warning my-3 mr-5">Hire me</a>
+<a href="{%url 'contact' %}" class="mt-3 btn btn-outline-info my-3 mr-5">Contact</a>
+</div>
+
+{% endblock content %}

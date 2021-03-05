@@ -20,7 +20,6 @@ def addSkillToDB(request):
             p=fm.cleaned_data['percent']
             res=Skill(skill=s,percent=p)
             res.save()
-        
         else:
             fm=AddSkills()
-            return render(request,"edu/addskills.html",{"data":fm})
+        return render(request,"edu/addskills.html",{"data":fm})
