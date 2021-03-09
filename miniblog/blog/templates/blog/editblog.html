@@ -1,19 +1,10 @@
 {% extends 'blog/base.html'%}
 {% load static %}
-
+{% block content %}
 <div class="container">
-    <h3 class=my-5>Signup</h3>
-    {% block msg %}
-    {% if messages %}
-    {% for message in messages %}
-    <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5"{% endif %}>{{message}}</p>
-
-    {% endfor %}
-    {% endif %}
-    {% endblock msg%}
-    {% block content %}
+    <h3 class=my-5> Dashboard/update Blog</h3>
     <div class="col-sm-8 offset-2">
-        <form action="{% url 'signup' %}" method="post" class="form-group" novalidate>
+        <form action="" method="post" class="form-group" novalidate>
             {% csrf_token %}
             {% for fm in form %}
             {{fm.label_tag}} {{fm}} <small class="text-warning"> {{fm.errors|striptags}}</small><br>
@@ -23,10 +14,11 @@
             <p>{{error}}</p>
             {% endfor %}
             {% endif%}
-            <input type="submit" class="btn btn-success my-5" value="signup">
-            <a href="{% url 'login' %}" class="btn btn-primary">Go to Login</a>
-    
+            <input type="submit" class="btn btn-success my-5" value="Update Blog">
+            <a href="{% url 'dashboard' %}" class="btn btn-danger">Exit</a>
         </form>
+        
+
 
     </div>
     

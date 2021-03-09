@@ -26,4 +26,7 @@ urlpatterns = [
     path('signup/',views.user_signup , name="signup"),
     path('login/',views.user_login , name="login"),
     path('logout/',views.user_logout , name="logout"),
+    path('add/',views.addBlog , name="addblog"),
+    path('delete/<int:id>/',views.deleteBlog , name="deleteblog"),
+    path('update/<int:id>/',views.UpdateBlog , name="updateblog"),
 ]

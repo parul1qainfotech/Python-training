@@ -1,15 +1,22 @@
 {% extends 'blog/base.html'%}
 {% load static %}
 {% block content %}
+<style>
+.jumbotron:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
 <div class="container">
         <h3>Home</h3>
-        <div class="col-sm-8 ofset-2">
+        <div class="col-sm-12">
+          {% for d in data %}
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                  <h1 class="display-4">Title</h1>
-                  <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius corrupti libero illo. Incidunt perspiciatis vel ipsam nam et blanditiis.</p>
+                  <h1 class="display-4 font-weight-bold">{{d.title}}</h1>
+                  <p class="lead">{{d.description}}</p>
                 </div>
               </div>
+              {% endfor %}
         </div>
 
     </div>

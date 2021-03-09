@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 <div class="container">
-    <h3 class=my-5>Login</h3>
+    <h3 class=my-5>Dashboard/Add Blog</h3>
     <div class="col-sm-8 offset-2">
-        <form action="{% url 'login' %}" method="post" class="form-group" novalidate>
+        <form action="{% url 'addblog' %}" method="post" class="form-group" novalidate>
             {%csrf_token%}
             {% for fm in form %}
             {{fm.label_tag}} {{fm}} <small class="text-warning"> {{fm.errors|striptags}}</small><br>
@@ -14,8 +14,8 @@
             <p>{{error}}</p>
             {% endfor %}
             {% endif%}
-            <input type="submit" class="btn btn-success my-5" value="Login">
-            <a href="{% url 'signup' %}" class="btn btn-primary">Back to signup</a>
+            <input type="submit" class="btn btn-success my-5" value="Add">
+            <a href="{% url 'dashboard' %}" class="btn btn-danger">Exit</a>
         </form>
         
 
