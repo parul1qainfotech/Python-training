@@ -1,0 +1,42 @@
+{% extends 'enroll/base.html'%}
+{% block content %}
+<h2 class="text-secondary">Registration Form</h2>
+<form method="POST" action="">
+{% csrf_token %}
+{{form.as_p}}
+<input type="submit" class="btn btn-success" value="Add">
+</form>
+{% endblock content %}
+{% block content1 %}
+    <h1 class="text-secondary">Data</h1>
+    <table id="example" class="table table-bordered " style="width:100% ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Update</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in student %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <form action="{% url 'deletedata' i.id %}" method="post">
+                    {%csrf_token%}
+                    <td><button class=" btn btn-danger" >Delete</button></td>
+                </form>
+                <td><a href="{% url 'updatedatas' i.id %}" class="btn btn-success">Update</a></td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+{% endblock content1 %}
