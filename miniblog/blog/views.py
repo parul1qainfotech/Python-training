@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponseRedirect
-
+from blog.forms import SignUpForm,LoginForm
 # Create your views here.
 
 def home(request):
@@ -15,10 +15,12 @@ def dashboard(request):
     return render(request,"blog/dashboard.html")
 
 def user_login(request):
-    return render(request,"blog/login.html")
+    form=LoginForm()
+    return render(request,"blog/login.html",{'form':form})
 
 def user_logout(request):
     return HttpResponseRedirect('/home')
 
-def signup(request):
-    return render(request,"blog/signup.html")
+def user_signup(request):
+    form=SignUpForm()
+    return render(request,"blog/signup.html",{'form':form})

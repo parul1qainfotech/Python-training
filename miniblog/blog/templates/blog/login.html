@@ -2,6 +2,25 @@
 {% load static %}
 {% block content %}
 <div class="container">
-    <h3 class=my-5>login</h3>
+    <h3 class=my-5>Login</h3>
+    <div class="col-sm-8 offset-2">
+        <form action="" method="post" class="form-group">
+            {%csrf_token%}
+            {% for fm in form %}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+            {% endfor %}
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errros %}
+            <p>{{error}}</p>
+            {% endfor %}
+            {% endif%}
+            <input type="submit" class="btn btn-success my-5" value="Login">
+    
+        </form>
+
+    </div>
+    
+    
+    
 </div>
 {% endblock content %}
