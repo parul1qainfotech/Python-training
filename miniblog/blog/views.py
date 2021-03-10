@@ -5,6 +5,8 @@ from .models import Blog
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import Group
+from django.core.mail import send_mail
+from django.conf import Settings
 # Create your views here.
 
 def home(request):
@@ -15,6 +17,20 @@ def about(request):
     return render(request,"blog/about.html")
 
 def contact(request):
+    if request.method =="POST":
+        name=request.POST['name']
+        email=request.POST['email']
+        subject=request.POST['subject']
+        message=request.POST['message']
+        send_mail(
+        subject,
+        message,
+        Settings.EMAIL_HOST_USER,
+        ['to@example.com'],
+        fail_silently=False,
+)
+        
+        return HttpResponseRedirect('/home/')
     return render(request,"blog/contact.html")
 
 def dashboard(request):
