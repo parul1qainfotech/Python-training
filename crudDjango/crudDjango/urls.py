@@ -22,4 +22,11 @@ urlpatterns = [
     path('',views.add_show,name="addandshow"),
     path('delete/<int:id>/',views.deletedata,name='deletedata'),
     path('update/<int:id>/',views.updatedata,name="updatedatas"),
+    path('setc/',views.setcookies, name="setcookies"),
+    path('getc/',views.getcookies, name="getcookies"),
+    path('deletec/',views.deletecookies, name="deletecookies"),
+    #sessions
+    path('sets/',views.setsession, name="setsession"),
+    path('gets/',views.getsession, name="getsession"),
+    path('dels/',views.delsession, name="delsession"),
 ]

@@ -1,0 +1,13 @@
+{% extends 'enroll/base.html'%}
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 ">
+       <h3> Session data  is {{get}}</h3>
+       {% for key in request.session.items %}
+       {{key}}
+       {% endfor %}
+
+    </div>
+</div>
+
+{% endblock content %}
