@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apivieww',
     'apiview2',
     'viewset',
+    'modelviewset',
     'rest_framework',
 ]
 

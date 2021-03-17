@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path,include
 from apivieww import views
 from apiview2 import views as v
-from viewset import views as vs
+# from viewset import views as vs
+from modelviewset import views as vm
 from rest_framework.routers import DefaultRouter
 
 
 router=DefaultRouter()
-router.register('studentviewset',vs.viewsetdata,basename='viewset')
+# router.register('studentviewset',vs.viewsetdata,basename='viewset')
+router.register('studentmodelviewset',vm.modelviewsetdata,basename='modelviewset')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,6 @@ urlpatterns = [
     path('studentdata/',v.studentdata1.as_view()),
     path('studentdata/<int:pk>/',v.studentdata2.as_view()),
     path('',include(router.urls)),
+    path('auth/',include('rest_framework.urls',namespace='rest_framework')),
     
 ]
