@@ -1,3 +1,4 @@
+""" this is card game  to find the greater card """
 import re
 print('''
     For cards:   
@@ -23,18 +24,12 @@ cards=[1,2,3,4,5,6,7,8,9,10,11,12,13]
 NumberOfPlayers=int(input("Enter Number of Player"))
 for i in range(NumberOfPlayers):
     val=input().upper()
-    if("".join(re.split("[^0-9]*",val))  in cards)or("".join(re.split("[^a-zA-z]*",val))  in suits):
-        val2=int("".join(re.split("[^0-9]*",val)))
-        digits.append(val2)
-        
+    if("".join(re.split("[^0-9]*",val)) in cards)or("".join(re.split("[^a-zA-z]*",val)) in suits):
+        VALUE=int("".join(re.split("[^0-9]*",val)))
+        digits.append(VALUE)
 maximumval=max(digits)
-# print(digits)
-# print(maximumval)
 for i in digits:
-    if(maximumval==i):
+    if maximumval==i:
         playerNo=digits.index(i)
         print(f"Winner of this game is player{playerNo+1}")
-   
         
-        
-
