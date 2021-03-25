@@ -4,9 +4,11 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework import filters
+from rest_framework.permissions import IsAuthenticated
 
 from flightapp.models import Flight,Passenger,Reservation
 from flightapp.serializers import FlightSerailizer,PassengerSerializer,ReservationSerializer
+from flightapp.throt import reservationThrottle,UserRateThrottle
 
 
 
@@ -54,3 +56,5 @@ class PassengerViewset(viewsets.ModelViewSet):
 class ReservationViewset(viewsets.ModelViewSet):
     queryset=Reservation.objects.all()
     serializer_class=ReservationSerializer
+    throttle_classes=[reservationThrottle]
+    permission_classes=[IsAuthenticated]
