@@ -18,11 +18,9 @@ print('''
           Jack-11
           Queen-12
           King-13 ''')
-# ankitksr: Correct the spacing here as per PEP guidelines.
 digits=[]
 suits=["D","S","H","C"]
 cards=[1,2,3,4,5,6,7,8,9,10,11,12,13]
-# ankitksr: all variable names in python should be in snake_case
 NumberOfPlayers=int(input("Enter Number of Player"))
 for i in range(NumberOfPlayers):
     val=input().upper()
@@ -30,12 +28,6 @@ for i in range(NumberOfPlayers):
         VALUE=int("".join(re.split("[^0-9]*",val)))
         digits.append(VALUE)
 maximumval=max(digits)
-<<<<<<< HEAD
-=======
-# print(digits)
-# print(maximumval)
-
->>>>>>> 7d1420ecb65c5d9f8f6e03fc50cf2052b0548684
 for i in digits:
     if maximumval==i:
         playerNo=digits.index(i)

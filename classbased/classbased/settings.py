@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'viewset',
     'modelviewset',
     'rest_framework',
+    'throttling',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +126,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SIMPLE_JWT={
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=10),
+    'REFRESH_TOKN_LIFETIME':timedelta(days=2),
+    'ROTATE_REFRESH_TOKEN':True
+}
+
+REST_FRAMEWORK={
+    'DEFAULT_THROTTLE_RATES':{
+        'anon':' 2/day',
+        'user':'5/hour',
+        'throt':'3/minute',
+        'viewstu':'4/minute',
+        
+        'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framwork.DjangoFilterBackend'],
+        
+        'DEFAULT_PAGINATION_CLASS':'rest_framwork.pagination.PageNumberPagination,PageNumberPagination',
+        'PAGE_SIZE':5
+        
+    }
+}

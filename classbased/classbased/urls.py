@@ -19,12 +19,13 @@ from apivieww import views
 from apiview2 import views as v
 # from viewset import views as vs
 from modelviewset import views as vm
+from throttling import views as throt
 from rest_framework.routers import DefaultRouter
 
 
 router=DefaultRouter()
 # router.register('studentviewset',vs.viewsetdata,basename='viewset')
-router.register('studentmodelviewset',vm.modelviewsetdata,basename='modelviewset')
+router.register('studentmodelviewset',throt.ThrottlingView,basename='modelviewset')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

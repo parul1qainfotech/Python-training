@@ -5,6 +5,7 @@ from rest_framework import serializers
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.authentication import BasicAuthentication,SessionAuthentication
 from rest_framework.permissions import IsAuthenticated,AllowAny,IsAdminUser,IsAuthenticatedOrReadOnly,DjangoModelPermissions,DjangoModelPermissionsOrAnonReadOnly,DjangoObjectPermissions
 from .permissions import Mypermission
@@ -13,5 +14,5 @@ from .permissions import Mypermission
 class modelviewsetdata(viewsets.ModelViewSet):
     queryset=Student.objects.all()
     serializer_class= StudentSerializer
-    authentication_classes=[SessionAuthentication]
+    authentication_classes=[JWTAuthentication]
     permission_classes=[Mypermission]
